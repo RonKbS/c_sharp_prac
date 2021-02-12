@@ -5,6 +5,9 @@ namespace c_sharp_practice
 {
     public static class Program
     {
+        public static string Repeat(this string s, int n)
+            => new StringBuilder(s.Length * n).Insert(0, s, n).ToString();
+
         static void Main(string[] args)
         {
             var incorrectValue = true;
@@ -14,12 +17,7 @@ namespace c_sharp_practice
                 {
                     Console.Write("\nInput Number to get Multiplication Table: ");
                     var number = int.Parse(Console.ReadLine());
-                    var limit = 0;
-                    while (limit < 13)
-                    {
-                        Console.WriteLine($"{limit*number}");
-                        limit++;
-                    }
+                    Console.WriteLine($"{number} ".Repeat(4));
                     incorrectValue = false;
                 }
                 catch (System.FormatException)

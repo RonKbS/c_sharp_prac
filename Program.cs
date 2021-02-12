@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Text;
 
 namespace c_sharp_practice
 {
-    class Program
+    public static class Program
     {
         static void Main(string[] args)
         {
@@ -11,14 +12,14 @@ namespace c_sharp_practice
             {
                 try
                 {
-                    Console.Write("\nInput the First Number: ");
-                    var number1 = int.Parse(Console.ReadLine());
-                    Console.Write("\nInput the Second Number: ");
-                    var number2 = int.Parse(Console.ReadLine());
-                    var temp = number1;
-                    number1 = number2;
-                    number2 = temp;
-                    Console.Write($"\nAfter Swapping, first number is {number1} and second number is  {number2}");
+                    Console.Write("\nInput Number to get Multiplication Table: ");
+                    var number = int.Parse(Console.ReadLine());
+                    var limit = 0;
+                    while (limit < 13)
+                    {
+                        Console.WriteLine($"{limit*number}");
+                        limit++;
+                    }
                     incorrectValue = false;
                 }
                 catch (System.FormatException)

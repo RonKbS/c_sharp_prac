@@ -8,23 +8,17 @@ namespace c_sharp_practice
         public static string Repeat(this string s, int n)
             => new StringBuilder(s.Length * n).Insert(0, s, n).ToString();
 
+       public static string remove_char(string str, int n)
+        {
+            // second integer removes given number of characters, starting from the first
+            return str.Remove(n, 1);
+        }
+
         static void Main(string[] args)
         {
-            var incorrectValue = true;
-            while (incorrectValue)
-            {
-                try
-                {
-                    Console.Write("\nInput Number to get Multiplication Table: ");
-                    var number = int.Parse(Console.ReadLine());
-                    Console.WriteLine($"{number} ".Repeat(4));
-                    incorrectValue = false;
-                }
-                catch (System.FormatException)
-                {
-                    Console.Write("\nPlease input numerical values only");
-                }
-            }
+            Console.WriteLine(remove_char("w3resource", 1));
+            Console.WriteLine(remove_char("w3resource", 9));
+            Console.WriteLine(remove_char("w3resource", 0)); 
         }
     }
 }
